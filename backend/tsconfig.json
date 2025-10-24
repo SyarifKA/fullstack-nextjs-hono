@@ -1,0 +1,19 @@
+// {
+//   "compilerOptions": {
+//     "strict": true,
+//     "jsx": "react-jsx",
+//     "jsxImportSource": "hono/jsx"
+//   }
+// }
+
+{
+  "compilerOptions": {
+    "target": "es2022",          // Minimal es2017, lebih aman pakai es2022
+    "module": "esnext",          // Harus mendukung top-level await
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
