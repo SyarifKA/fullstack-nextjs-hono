@@ -8,12 +8,11 @@ created_at TIMESTAMP WITH TIME ZONE DEFAULT now()
 
 CREATE TABLE IF NOT EXISTS products (
 id SERIAL PRIMARY KEY,
-owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
 title TEXT NOT NULL,
 image TEXT,
 description TEXT,
-pricePromo NUMERIC(12,2),
-price NUMERIC(12,2) NOT NULL,
+price_promo NUMERIC(12,0),
+price NUMERIC(12,0) NOT NULL,
 created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
 updated_at TIMESTAMP WITH TIME ZONE DEFAULT now()
 );

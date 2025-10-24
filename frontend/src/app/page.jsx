@@ -36,7 +36,6 @@ export default function Home() {
       setLoading(false);
     }
   };
-  console.log(products)
 
   useEffect(() => {
     fetchProductsAPI(currentPage);

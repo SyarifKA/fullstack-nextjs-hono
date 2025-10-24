@@ -3,14 +3,20 @@
 import { usePathname } from "next/navigation";
 import Cookies from "js-cookie"
 import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 
 import Link from "next/link";
 
 export default function MainHeader() {
     const pathname = usePathname();
     const router = useRouter()
+    const [mounted, setMounted] = useState(false);
 
     const token = Cookies.get("token");
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const handleLogOut = ()=>{
         Cookies.remove("token")
@@ -20,6 +26,8 @@ export default function MainHeader() {
     if(pathname.includes("/login") || pathname.includes("/register")){
         return null
     }
+
+    if (!mounted) return null;
 
     return (
         <div className="navbar bg-base-100 shadow-sm">
